@@ -1,19 +1,32 @@
+/////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
-//lets create a player structure
-//name, salary, height, weight, scoring average, free-throw percentage
+#include <cmath>
+/////////////////////////////////////////////////////////////////////////////////////////
 struct coordinates // structure declaration
 {
 float x;
 float y;
 }  ;
 ////////////////////////////////////////////////////////////////////////////////////////
-/// 
+float distance_two_points(coordinates a, coordinates b); //
+////////////////////////////////////////////////////////////////////////////////////////
 int main()
 {
 using namespace std;
-coordinates xy={10,9}; 
+coordinates a={10,9}, b={-5,-4}; // create and initialized coordinates 
 
-cout<<xy.x<<endl;
+float dist;
+
+dist=distance_two_points(a,b); ///calling the function distance_two_points
+
+cout<<dist<<endl;
 
 return 0; 
 }
+///////////////////////////////////////////////////////////////////////////////////////
+//this is a function that calculates the distance between two points in space
+// dist =  sqrt( (x_2 ^2 - x_1^2 ) + (y_2 ^2 - y_1^2 ) ) 
+float distance_two_points(coordinates a, coordinates b){
+    return  sqrt( pow(b.x-a.x,2)+pow(b.y-a.y,2));
+}
+/////////////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,7 @@
 // arrfun1.cpp -- functions with an array argument
 #include <iostream>
 const int ArSize = 8;
-int sum_arr(int arr[], int n); // prototype
+int sum_arr(int *arr, int n); // prototype
 int main()
 {
 using namespace std;
