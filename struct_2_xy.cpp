@@ -1,12 +1,9 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <cmath>
-<<<<<<< HEAD
-/////////////////////////////////////////////////////////////////////////////////////////
-=======
+
 using namespace std;
 
->>>>>>> 3c16091ba23b19e8240be9658fa80f4ec4127ecc
 struct coordinates // structure declaration
 {
 float x;
@@ -32,14 +29,13 @@ float dist;
 dist=distance_two_points(a,b); ///calling the function distance_two_points
 
 cout<<dist<<endl;
-=======
+
 
 coordinates x1y1={10,9}, x2y2={1,-9}; 
 //coordinates ; 
 float dist;
 cout<<"Coordinates x1:"<<x1y1.x<<endl;
 cout<<"Coordinates y1:"<<x1y1.y<<endl;
->>>>>>> 3c16091ba23b19e8240be9658fa80f4ec4127ecc
 
 cout<<"Coordinates x2:"<<x2y2.x<<endl;
 cout<<"Coordinates y2:"<<x2y2.y<<endl;
@@ -75,4 +71,3 @@ void distance_public(void){
 }
 //////////////////
 /////Example: variable publica: dist_2
->>>>>>> 3c16091ba23b19e8240be9658fa80f4ec4127ecc
