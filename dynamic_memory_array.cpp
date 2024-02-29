@@ -1,6 +1,6 @@
 /*
 This program totals and averages the sales amounts for any 
-number of says. The amounts are stored in a dynamically 
+number of days. The amounts are stored in a dynamically 
 allocated array
 */
 
@@ -15,12 +15,11 @@ int main(){
     int     numDays,            //to hold the number of days sales    
             count;              //counter variable
 
-
     //get the number of days of sales.
     cout << "How many days of sales amounts do you want to enter? : ";
     cin >> numDays;
 
-    //dynamicallu allocate an array large enough to hold 
+    //dynamically allocate an array large enough to hold 
     //that many days of sales amounts 
     sales = new double[numDays];
     
@@ -49,7 +48,5 @@ int main(){
     sales = nullptr;
 
     return 0;
-
-
 }
 
