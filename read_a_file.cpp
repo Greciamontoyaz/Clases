@@ -10,7 +10,7 @@ void showContents(fstream &);
 
 int main ()
 {   
-    string nameFile= "demofile.txt";  
+    string nameFile= "four_letter_word.txt";  
     fstream dataFile;
 
     
@@ -46,5 +46,10 @@ void showContents(fstream &file)
 string line;
 while (getline(file, line)) {
     cout << line << endl;
+    if(line =="help"){
+    cout<<"The  word is help\n";      
+    break;
+    }
 }
+
 }
