@@ -13,7 +13,7 @@ int main(){
 
         for(int y=0; y<250; y++) {
             for(int x=0; x<250; x++) {
-            image<< (y)%255 <<" "<< x << " "<< x <<endl;      
+            image<< x <<" "<< x << " "<< x <<endl;      
             }
         }
         image.close();
