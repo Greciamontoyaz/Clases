@@ -9,7 +9,6 @@ int main ()
 {   
     
     fstream dataFile;
-
     cout <<"Opening file ... \n";
     dataFile.open("demofile.txt", ios::out);   // opens the file in
     cout<<"Now writing data to the file .\n";
@@ -20,10 +19,7 @@ int main ()
         dataFile << "Hi \n";
         dataFile.close();
         cout<<"Done. \n";
-
     }   
-    ///////////////////////////////////////////////////////
     
-
     return 0;      
 }

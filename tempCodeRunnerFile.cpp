@@ -1,1 +1,1 @@
-  // Access elements in the matrix
+cout << *ptr << "\n";

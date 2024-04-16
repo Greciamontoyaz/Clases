@@ -12,6 +12,8 @@ using namespace std;
 
 double findMedian(double* sales, int numDays);
 int findMode(double* sales, int numDays);
+
+
 int main(){
     double *sales =nullptr,     //to dinamically allocate an array
             total=0.0,          //accumulator 
