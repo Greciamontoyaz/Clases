@@ -5,53 +5,67 @@
 using namespace std;
 
 int main() {
-string fileName;
-cout << "Enter the file name: ";
-cin >> fileName;
+    string filename;
+    cout << "Ingrese el nombre del archivo: ";
+    getline(cin, filename);
 
-fstream file;
-file.open(fileName, ios::in); // Open the file in read mode
+    fstream file(filename, ios::out | ios::app); // Abrir el archivo en modo de escritura adicional (append mode)
 
-if (file.is_open()) {
-cout << "The file " << fileName << " exists." << endl;
-cout << "Would you like to open it and write to it (y/n)? ";
-char choice;
-cin >> choice;
+    if (!file) {
+        cout << "El archivo no existe. ¿Desea crearlo? (s/n): ";
+        char choice;
+        cin >> choice;
+        if (choice == 's' || choice == 'S') {
+            file.open(filename, ios::out); // Crear el archivo
+            if (file) {
+                cout << "Archivo creado exitosamente." << endl;
+            } else {
+                cout << "No se pudo crear el archivo." << endl;
+            }
+        } else {
+            cout << "Operación cancelada." << endl;
+            return 1; // Salir del programa
+        }
+    }
 
-if (choice == 'y' || choice == 'Y') {
-file.open(fileName, ios::out | ios::app); // Open the file in append mode
-cout << "Opening file for writing..." << endl;
+    file.close(); // Cerrar el archivo antes de abrirlo de nuevo con otra operación
 
-// Write to the file here (not shown in the code)
+    cout << "El archivo existe. Elija una opción:" << endl;
+    cout << "1. Abrir y escribir en el archivo" << endl;
+    cout << "2. Cambiar el nombre del archivo" << endl;
+    int opcion;
+    cin >> opcion;
+    cin.ignore(); // Limpiar el buffer de entrada
 
-cout << "Writing to file complete." << endl;
+    switch (opcion) {
+        case 1: {
+            file.open(filename, ios::out | ios::app); // Abrir el archivo en modo de escritura adicional (append mode)
+            if (file) {
+                cout << "Ingrese el texto a agregar al final del archivo:" << endl;
+                string input_text;
+                getline(cin, input_text);
+                file << input_text << endl;
+                cout << "Texto agregado al archivo." << endl;
+            } else {
+                cout << "No se pudo abrir el archivo para escribir." << endl;
+            }
+            break;
+        }
+        case 2: {
+            cout << "Ingrese el nuevo nombre del archivo:" << endl;
+            string new_name;
+            getline(cin, new_name);
+            if (rename(filename.c_str(), new_name.c_str()) == 0) {
+                cout << "El archivo ha sido renombrado exitosamente." << endl;
+            } else {
+                cout << "Error al intentar renombrar el archivo." << endl;
+            }
+            break;
+        }
+        default:
+            cout << "Opción no válida." << endl;
+            break;
+    }
 
-} else {
-cout << "Option to write to file declined." << endl;
-}
-
-file.close(); // Close the file
-
-} else {
-cout << "The file " << fileName << " does not exist." << endl;
-cout << "Would you like to create a new file with this name (y/n)? ";
-char choice;
-cin >> choice;
-
-if (choice == 'y' || choice == 'Y') {
-file.open(fileName, ios::out); // Create a new file
-cout << "Creating new file " << fileName << "..." << endl;
-
-// Write to the file here (not shown in the code)
-
-cout << "Writing to file complete." << endl;
-
-} else {
-cout << "Option to create new file declined." << endl;
-}
-
-file.close(); // Close the file
-}
-
-return 0;
+    return 0;
 }

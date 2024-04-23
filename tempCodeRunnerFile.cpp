@@ -1,1 +1,1 @@
-cout << *ptr << "\n";
+input_text
