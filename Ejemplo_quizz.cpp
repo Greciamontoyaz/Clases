@@ -1,39 +1,57 @@
-#include <iomanip>
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
 int main() {
-  int* puntero_0 = nullptr; //inicialización de puntero
-  int* puntero_1 = nullptr;
-  
-  int variable_0 = 10; //varible que se  le asignara al puntero_0
-  int variable_1 = 20; //varible que se  le asignara al puntero_1
+string fileName;
+cout << "Enter the file name: ";
+cin >> fileName;
 
-  puntero_0 = &variable_0; // El operador & se utiliza para obtener la dirección de memoria de una variable.
-  puntero_1 = &variable_1;
+fstream file;
+file.open(fileName, ios::in); // Open the file in read mode
 
-  int diferencia = puntero_1 - puntero_0; // Calcula la diferencia entre los punteros puntero_0 y puntero_1
+if (file.is_open()) {
+cout << "The file " << fileName << " exists." << endl;
+cout << "Would you like to open it and write to it (y/n)? ";
+char choice;
+cin >> choice;
 
-  cout<<"La diferencia entre los punteros: "<<diferencia<<endl;
+if (choice == 'y' || choice == 'Y') {
+file.open(fileName, ios::out | ios::app); // Open the file in append mode
+cout << "Opening file for writing..." << endl;
 
+// Write to the file here (not shown in the code)
 
-  // Declarar un arreglo de enteros
-  int numeros[5] = {10, 20, 30, 40, 50};
+cout << "Writing to file complete." << endl;
 
-  // Recorrer el arreglo usando un puntero
-  for (int i = 0; i < 5; i++) {
-    int* puntero = numeros + i; // Obtener el puntero al elemento actual del arreglo
-    cout << *puntero << " "; // Imprimir el valor del elemento actual del arreglo
-  }
+} else {
+cout << "Option to write to file declined." << endl;
+}
 
-  cout << endl;
+file.close(); // Close the file
 
-  // Acceder a un elemento específico del arreglo usando un puntero
-  int* punteroElemento3 = numeros + 2;
-  cout << "El valor del tercer elemento del arreglo es: " << *punteroElemento3 << endl;
+} else {
+cout << "The file " << fileName << " does not exist." << endl;
+cout << "Would you like to create a new file with this name (y/n)? ";
+char choice;
+cin >> choice;
 
+if (choice == 'y' || choice == 'Y') {
+file.open(fileName, ios::out); // Create a new file
+cout << "Creating new file " << fileName << "..." << endl;
 
-  return 0;
+// Write to the file here (not shown in the code)
+
+cout << "Writing to file complete." << endl;
+
+} else {
+cout << "Option to create new file declined." << endl;
+}
+
+file.close(); // Close the file
+}
+
+return 0;
 }
