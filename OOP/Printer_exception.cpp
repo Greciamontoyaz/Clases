@@ -59,7 +59,7 @@ class Printer {
         cout << "Printing... " << endl;
         Show(txtDoc);
         cout<<endl;
-        this->availablePaper -= required_paper;
+        availablePaper -= required_paper;
         cout << "Now you have available " << availablePaper
              <<" pages"<<endl;
     }
