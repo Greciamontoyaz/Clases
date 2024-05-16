@@ -63,8 +63,9 @@ class Player{
        the A or the 9 are missing) are straights.  */
 
     else if (all_of(mycount, mycount+6, [](int i){return i<=1;}) &&
-        (mycount[0]==0 || mycount[5]==0))
+        (mycount[0]==0 || mycount[5]==0)){
         cout << "Straight.\n";
+        hand = Straight;}        
     else if(all_of(mycount, mycount+6, [](int i){return i<=1;}) && 
         mycount[0]==1 && mycount[5]==1) {
         cout << "Bust.\n";
