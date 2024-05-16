@@ -1,9 +1,0 @@
-
-
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ Ejemplo_quizz.cpp -o Ejemplo_quizz } ; if ($?) { .\Ejemplo_quizz }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ Ejemplo_quizz.cpp -o Ejemplo_quizz } ; if ($?) { .\Ejemplo_quizz }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ tempCodeRunnerFile.cpp -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ tempCodeRunnerFile.cpp -o tempCodeRunnerFile } ; if ($?) { .\tempCodeRunnerFile }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ Ejemplo_quizz.cpp -o Ejemplo_quizz } ; if ($?) { .\Ejemplo_quizz }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ Ejemplo_quizz.cpp -o Ejemplo_quizz } ; if ($?) { .\Ejemplo_quizz }
-cd "c:\Users\greci\OneDrive\Documents\Clases\" ; if ($?) { g++ Ejemplo_quizz.cpp -o Ejemplo_quizz } ; if ($?) { .\Ejemplo_quizz }

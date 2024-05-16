@@ -1,0 +1,1 @@
+Reading character-by-character: This method involves opening the file in read mode and then reading each character one by one using a loop. As each character is read, you can increment a counter variable. The loop continues until the end of the file is reached (indicated by the eof() function). Here's an example code:
